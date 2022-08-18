@@ -1,0 +1,27 @@
+.regionPokes {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  animation: enter .4s forwards;
+}
+
+.pokeImg {
+  width: 130px;
+  max-height: 130px;
+}
+
+.pokeNumber,
+.pokeTypes {
+  display: inline;
+}
+
+.pokeTypeImg {
+  width: 10px;
+  height: auto;
+}
+
+@keyframes enter {
+  to {
+    opacity: 1;
+  }
+}

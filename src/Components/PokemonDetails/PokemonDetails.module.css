@@ -1,0 +1,154 @@
+.containerDetails {
+  max-width: 60%;
+  margin: 0 auto;
+  opacity:0;
+  animation: enter .4s forwards;
+}
+
+@keyframes enter {
+  to {
+    opacity: 1;
+  }
+}
+
+.selectedInfo {
+  display: flex;
+  width: 100%;
+}
+
+.selectedName,
+.selectedTypesImg, 
+.selectedAttributesTitle, 
+.selectedAttributesValue{
+  text-transform: capitalize;
+}
+
+.selectedSprites {
+  width: 100%;
+}
+
+.selectedPrimaryImage {
+  margin-bottom: 1rem;
+}
+
+.selectedPrimaryImage img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.selectedPrimaryImage p {
+  text-align: center;
+  position: relative;
+  top: -20px;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+.selectedAttributes,
+.selectedStats {
+  display: flex;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.selectedStats {
+  padding: 1rem 0rem;
+}
+
+.selectedAttributes li {
+  margin-bottom: .5rem;
+}
+
+.selectedAttributesTitle,
+.statsName {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+
+.selectedAttributesValue{
+  display: block;
+}
+
+.selectedFemale,
+.selectedMale {
+  display: block;
+}
+
+.selectedOtherImages {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.selectedOtherImages div {
+  text-align: center;
+}
+
+.selectedData {
+  width: 70%;
+}
+
+.selectedTypes {
+  margin-bottom: 2rem;
+}
+
+.selectedTypes h3 {
+  text-align: center;
+}
+
+.selectedTypesImg {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+
+.selectedAttributes{
+  background-color: #aaa;
+}
+
+.selectedAttributesTitle {
+  display: block;
+}
+
+.selectedStats {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+}
+
+.selectedStats li{
+  color: #ddd;
+
+}
+
+.selectedStatsWrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.selectedStatsLeft,
+.selectedStatsRight  {
+  text-align: center;
+}
+
+.selectedStats ul {
+  margin-bottom: 1rem;
+}
+
+.selectedStatsLeft li {
+  margin-left: 0px;
+}
+
+.selectedStatsRight li {
+  margin-right: 0px;
+}
+
+.hp,
+.speed {
+  text-align: center;
+
+}

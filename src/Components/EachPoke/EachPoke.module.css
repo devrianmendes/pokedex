@@ -1,0 +1,35 @@
+.mainContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.pokeContainer {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  padding: .3rem;
+  transition: .1s;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pokeContainer:hover {
+  box-shadow: 0px 0px 10px 1px #999;
+  transform: scale(1.1);
+  transition: .1s;
+}
+
+.pokeImg {
+  width: 130px;
+  max-height: 130px;
+}
+
+.details {
+  display: flex;
+}
+
+.pokeNumber,
+.pokeTypes {
+  margin: 0px 5px;
+}
