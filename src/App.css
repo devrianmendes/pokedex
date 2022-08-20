@@ -16,13 +16,14 @@ li {
 body {
   overflow-x: hidden;
   font-family: 'Cabin';
+  background-color: #eee;
 }
 
 .container {
-  max-width: 65%;
+  max-width: 60%;
   margin: auto;
 }
 
 .appBody {
-  padding: 8rem 0rem;
+  padding: 4rem 0rem;
 }

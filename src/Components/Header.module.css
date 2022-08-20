@@ -18,8 +18,8 @@
   width: 100px;
   height: auto;
   position: relative;
-  right: -2000px;
-  animation: pokeball 2s forwards;
+  /* right: -2000px; */
+  /* animation: pokeball 2s forwards; */
 }
 
 .headerWrapper span {

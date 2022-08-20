@@ -1,15 +1,12 @@
 import React from 'react';
+import { GlobalContext } from '../../GlobalContext';
 import styles from './EachPoke.module.css';
 
-const data = ({ data, pokeNum }) => {
-
-  function handleClick() {
-    window.localStorage.setItem('poke', data.id)
-    window.localStorage.setItem('name', data.name)
-  }
+const EachPoke = ({ data, pokeNum }) => {
+  const { setSelected } = React.useContext(GlobalContext);
 
   return (
-    <div className={styles.pokeContainer} onClick={handleClick}>
+    <div className={styles.pokeContainer} onClick={(()=> setSelected(data.id))}>
       <img
         className={styles.pokeImg}
         src={
@@ -18,7 +15,6 @@ const data = ({ data, pokeNum }) => {
             : data.sprites.other['official-artwork'].front_default
         }
         alt="Imagem oficial do pokemon"
-        
       />
       <div className={styles.details}>
         <span className={styles.pokeNumber}>#{pokeNum + 1}</span>
@@ -30,6 +26,7 @@ const data = ({ data, pokeNum }) => {
               height="20px"
               src={require(`../../Assets/${eachType.type.name}.svg`)}
               alt=""
+              key={eachType.type.name}
             />
           ))}
         </div>
@@ -41,4 +38,4 @@ const data = ({ data, pokeNum }) => {
   );
 };
 
-export default data;
+export default EachPoke;

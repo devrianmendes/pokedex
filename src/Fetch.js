@@ -14,8 +14,6 @@ export async function GET_POKEMON(pokemon) {
 
 export async function GET_POKEMONDETAILS(pokemon) {
   const fetchPokemon = await fetch(API_URL + `pokemon-species/${pokemon}/`);
-  console.log(fetchPokemon, 'responpse retornado no feth')
   const jsonPokemon = await fetchPokemon.json();
-  console.log(jsonPokemon, 'json retornado no fetch')
   return jsonPokemon;
 }

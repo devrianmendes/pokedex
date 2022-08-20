@@ -1,5 +1,6 @@
 import React from 'react';
-import { GET_DEXS, GET_POKEMON } from './Fetch';
+import Loading from './Components/Loading/Loading';
+import { GET_DEXS, GET_POKEMON, GET_POKEMONDETAILS } from './Fetch';
 
 export const GlobalContext = React.createContext();
 
@@ -18,6 +19,10 @@ export const PokemonStorage = ({ children }) => {
   let [stop, setStop] = React.useState(false);
   const [infinite, setInfinite] = React.useState(true);
   const [loading, setLoading] = React.useState(false);
+  const [selected, setSelected] = React.useState(0);
+  const [selectedLoaded, setSelectedLoaded] = React.useState(null);
+  const [male, setMale] = React.useState(null);
+  const [female, setFemale] = React.useState(null);
 
   React.useEffect(() => {
     setLoading(true);
@@ -34,7 +39,6 @@ export const PokemonStorage = ({ children }) => {
         'alola',
         'galar',
       );
-      // setGenTitle(titles);
 
       setRegion1({ name: 'kanto', dex: pokemon_entries.slice(0, 151) });
       setRegion2({ name: 'johto', dex: pokemon_entries.slice(151, 251) });
@@ -79,7 +83,11 @@ export const PokemonStorage = ({ children }) => {
       if (infinite) {
         let scroll = window.scrollY;
         let height = document.documentElement.scrollHeight - window.innerHeight;
-        if (scroll > height * 0.99 && !stop) {
+        if (
+          scroll > height * 0.99 &&
+          !stop &&
+          window.location.pathname === '/'
+        ) {
           setStop(true);
           setIndex(index + 1);
           setTimeout(() => {
@@ -98,9 +106,33 @@ export const PokemonStorage = ({ children }) => {
     };
   }, [index, stop, infinite]);
 
-  if(national.length === 0) return null;
+  React.useEffect(() => {
+    async function details() {
+      if (selected !== 0) {
+        const multiplier = 12.5;
+        const data = await GET_POKEMONDETAILS(selected);
+        setSelectedLoaded(data);
+        setFemale(data.gender_rate * multiplier);
+        setMale(100 - female);
+      }
+    }
+    details();
+  }, [selected, female]);
+
+  if (national.length === 0) return null;
+  if (loading) return <Loading />;
   return (
-    <GlobalContext.Provider value={{ homeShow, loading }}>
+    <GlobalContext.Provider
+      value={{
+        homeShow,
+        loading,
+        selected,
+        setSelected,
+        selectedLoaded,
+        male,
+        female,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );

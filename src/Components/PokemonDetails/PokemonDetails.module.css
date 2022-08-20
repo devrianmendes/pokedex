@@ -1,5 +1,5 @@
 .containerDetails {
-  max-width: 60%;
+  max-width: 50%;
   margin: 0 auto;
   opacity:0;
   animation: enter .4s forwards;
@@ -13,23 +13,17 @@
 
 .selectedInfo {
   display: flex;
-  width: 100%;
 }
 
 .selectedName,
 .selectedTypesImg, 
 .selectedAttributesTitle, 
-.selectedAttributesValue{
+.selectedAttributesValue,
+.selectedStats {
   text-transform: capitalize;
 }
 
-.selectedSprites {
-  width: 100%;
-}
 
-.selectedPrimaryImage {
-  margin-bottom: 1rem;
-}
 
 .selectedPrimaryImage img {
   position: relative;
@@ -46,16 +40,31 @@
 }
 
 .selectedAttributes,
-.selectedStats {
-  display: flex;
+.selectedStats,
+.selectedTypes,
+.selectedSprites {
+  background-color: #fff;
+  border-top: 4px solid;
   padding: 1rem 3rem;
-  border-radius: 10px;
-  justify-content: space-between;
   margin-bottom: 1rem;
 }
 
+.selectedSprites {
+  margin-right: 1rem;
+  border-color: #1E90FF !important;
+}
+
 .selectedStats {
-  padding: 1rem 0rem;
+  display: flex;
+  border-color: #A020F0;
+  flex-direction: column;
+  color: #333;
+}
+
+.selectedAttributes {
+  display: flex;
+  justify-content: space-between;
+  border-color :	#FF8C00;
 }
 
 .selectedAttributes li {
@@ -66,7 +75,7 @@
 .statsName {
   font-weight: bold;
   font-size: 1.1rem;
-  text-transform: capitalize;
+  display: block;
 }
 
 .selectedAttributesValue{
@@ -91,60 +100,27 @@
   width: 70%;
 }
 
-.selectedTypes {
-  margin-bottom: 2rem;
-}
-
 .selectedTypes h3 {
   text-align: center;
 }
 
-.selectedTypesImg {
-  display: flex;
-  text-align: center;
-  justify-content: space-evenly;
-}
 
-
-.selectedAttributes{
-  background-color: #aaa;
-}
-
-.selectedAttributesTitle {
-  display: block;
-}
-
-.selectedStats {
-  display: flex;
-  flex-direction: column;
-  background-color: #333;
-}
-
-.selectedStats li{
-  color: #ddd;
-
-}
-
+.selectedTypesImg,
 .selectedStatsWrapper {
   display: flex;
-  justify-content: space-evenly;
+  text-align: center;
+  justify-content: space-between;
 }
 
-.selectedStatsLeft,
-.selectedStatsRight  {
-  text-align: center;
+.selectedTypesImg {
+  justify-content: center;
+}
+.selectedTypesEachImg {
+  margin-right: 1rem;
 }
 
 .selectedStats ul {
-  margin-bottom: 1rem;
-}
-
-.selectedStatsLeft li {
-  margin-left: 0px;
-}
-
-.selectedStatsRight li {
-  margin-right: 0px;
+  margin-bottom: .5rem;
 }
 
 .hp,
