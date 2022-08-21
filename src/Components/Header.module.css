@@ -1,8 +1,5 @@
-
 .header {
   background-color: #fff;
-  width: 100%;
-  height: auto;
   font: normal 2.5rem 'Cabin';
   box-shadow: 0px 0px 10px 0px #aaa;
 }
@@ -10,25 +7,25 @@
 .headerWrapper {
   display: flex;
   align-items: center;
-  width: 100%;
-  height: auto;
+  margin: 0px;
 }
 
 .headerWrapper img {
   width: 100px;
-  height: auto;
-  position: relative;
-  /* right: -2000px; */
-  /* animation: pokeball 2s forwards; */
 }
 
 .headerWrapper span {
   color: #ed3237;
 }
 
-@keyframes pokeball {
-  to {
-    right: 0px;
-    transform: rotateZ(-1440deg)
+@media (max-width: 640px) {
+  .header {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .headerWrapper img {
+    width: 50px;
   }
 }

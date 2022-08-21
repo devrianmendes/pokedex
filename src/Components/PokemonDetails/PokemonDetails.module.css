@@ -1,6 +1,6 @@
 .containerDetails {
-  max-width: 50%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
   opacity:0;
   animation: enter .4s forwards;
 }
@@ -22,8 +22,6 @@
 .selectedStats {
   text-transform: capitalize;
 }
-
-
 
 .selectedPrimaryImage img {
   position: relative;
@@ -104,8 +102,6 @@
   text-align: center;
 }
 
-
-.selectedTypesImg,
 .selectedStatsWrapper {
   display: flex;
   text-align: center;
@@ -113,8 +109,11 @@
 }
 
 .selectedTypesImg {
-  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
 }
+
 .selectedTypesEachImg {
   margin-right: 1rem;
 }
@@ -128,3 +127,64 @@
   text-align: center;
 
 }
+
+@media(max-width: 992px) {
+  .selectedInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .selectedData {
+    display: flex;
+    flex-direction: column;
+    width: 70% !important;
+  }
+
+  .selectedAttributes,
+  .selectedStats,
+  .selectedTypes,
+  .selectedSprites {
+    width: 100%;
+    margin-right: 0px !important;
+  }
+
+  .selectedTypesImg {
+    justify-content: space-evenly;
+  }
+}
+
+@media(max-width: 640px) {
+  .containerDetails {
+    padding: 1rem;
+  }
+
+  .selectedSprites {
+    padding: 0px;
+  }
+
+  .selectedPrimaryImage img {
+    width: 70%;
+  }
+
+  .selectedOtherImages img {
+    width: 50;
+  }
+
+  .selectedTypesEachImg img {
+    max-width: 3.5rem;
+  }
+
+  .selectedData {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+  }
+
+  .selectedAttributes {
+    justify-content: space-around;
+  }
+
+  .selectedStatsWrapper {
+    justify-content: space-around;
+  }
+} 

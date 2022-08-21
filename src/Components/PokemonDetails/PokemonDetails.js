@@ -23,7 +23,7 @@ const PokemonDetails = () => {
   if (loading) return <Loading />;
   if (selectedLoaded === null) return <Loading />;
   return (
-    <div className={`${styles.containerDetails} container`}>
+    <div className={styles.containerDetails}>
       <div className={styles.selectedPokemon}>
         <h1 className={styles.selectedName}>
           <span>#{homeShow[selected - 1].id}</span>{' '}
@@ -37,7 +37,7 @@ const PokemonDetails = () => {
                   homeShow[selected - 1].sprites.other['official-artwork']
                     .front_default
                 }
-                alt=""
+                alt="Imagem oficial do pokemon"
               />
               <p>Arte oficial</p>
             </div>

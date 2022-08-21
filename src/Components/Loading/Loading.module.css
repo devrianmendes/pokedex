@@ -1,15 +1,23 @@
 .loading {
   width: 100%;
-  height: 100vh;
-  
 }
 
-.loading img,
-.loading h3 {
+.loadingWrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  width: 5%;
-  left: 50%;
-  top: 30%;
-  transform: translate3d(-50%, -50%, 0);
-  text-align: center;
+  top: -4rem;
+}
+
+.loadingWrapper img {
+  width: 15%;
+}
+
+@media(max-width: 640px) {
+  .loadingWrapper img {
+    width: 40%;
+  }
 }
