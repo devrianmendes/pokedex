@@ -9,4 +9,6 @@ Nesse projeto eu utilizei as seguintes funcionalidades:
 - State, Effect and Context hooks
 - Links
 
-The project is not finished yet, I still want to implement complex search bar, more pokemon information and some design alterations.
+The project is not finished yet, need some improvements and I want to implement complex search bar, more pokemon information and some design alterations.
+
+[See it here](https://devrianmendes-pokedex.netlify.app/)
